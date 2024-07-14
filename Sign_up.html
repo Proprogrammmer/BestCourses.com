@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up for FreeCourses.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .input-name, .input-email, .pass, .confirm-pass {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+
+        .already {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .already a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .already a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2></h2>
+    <div class="container">
+        <div class="heading">
+            Sign up
+        </div>
+        <div class="input-name">
+            <input type="text" name="name" placeholder="Full Name">
+        </div>
+        <div class="input-email">
+            <input type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="pass">
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="confirm-pass">
+            <input type="password" name="confirm-password" placeholder="Confirm Password">
+        </div>
+        <input type="button" value="Sign up">
+        <div class="already">
+            <a href="login.html">Already have an account?</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const signUpButton = document.querySelector('input[type="button"]');
+            const passwordInput = document.querySelector('input[name="password"]');
+            const confirmPasswordInput = document.querySelector('input[name="confirm-password"]');
+            
+            signUpButton.addEventListener('click', () => {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                if (password.length < 12) {
+                    alert('Password must be at least 12 characters long.');
+                } else if (password !== confirmPassword) {
+                    alert('Passwords do not match.');
+                } else {
+                    // Proceed with form submission or authentication
+                    alert('Signing up...');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
